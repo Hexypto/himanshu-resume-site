@@ -279,19 +279,6 @@ section {
     justify-content: center;
     padding-top: 140px;
     position: relative;
-    overflow: hidden;
-}
-
-#hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1.5px, transparent 1.5px);
-    background-size: 24px 24px;
-    mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
-    -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
-    pointer-events: none;
-    z-index: 0;
 }
 
 .hero-wrapper {
@@ -299,8 +286,6 @@ section {
     grid-template-columns: 1.2fr 0.8fr;
     gap: 40px;
     align-items: center;
-    position: relative;
-    z-index: 1;
 }
 
 .hero-badge {
@@ -349,46 +334,7 @@ section {
     font-size: 1.15rem;
     color: var(--text-secondary);
     max-width: 580px;
-    margin-bottom: 24px;
-}
-
-.hero-tags {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 32px;
-}
-
-.hero-tag-item {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-color);
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--text-secondary);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: all var(--transition-speed) ease;
-    cursor: default;
-}
-
-.hero-tag-item:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: var(--accent-color);
-    color: var(--text-primary);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.tag-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: var(--accent-color);
-    box-shadow: 0 0 6px var(--accent-color);
-    transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    margin-bottom: 36px;
 }
 
 .hero-buttons {
@@ -1621,21 +1567,13 @@ footer {
     width: 110px;
     height: 110px;
     border-radius: 50%;
-    background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7, #f9ce34);
-    background-size: 400% 400%;
+    background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
     padding: 3px;
     margin: 0 auto 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 20px rgba(238, 42, 123, 0.3);
-    animation: rotateGlowRing 8s ease infinite;
-}
-
-@keyframes rotateGlowRing {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
 }
 
 .profile-avatar {
@@ -1674,16 +1612,6 @@ footer {
 .stat-item {
     display: flex;
     flex-direction: column;
-    transition: transform var(--transition-speed) ease;
-    cursor: default;
-}
-
-.stat-item:hover {
-    transform: translateY(-2px);
-}
-
-.stat-item:hover .stat-val {
-    color: var(--accent-color);
 }
 
 .stat-val {
@@ -1691,7 +1619,6 @@ footer {
     font-weight: 700;
     font-family: var(--font-heading);
     color: var(--text-primary);
-    transition: color var(--transition-speed) ease;
 }
 
 .stat-label {
@@ -2035,69 +1962,5 @@ body.glitch-fx-active .highlight {
     96% {
         text-shadow: 0 0 0 transparent;
         transform: skew(0deg);
-    }
-}
-
-/* Figma Multiplayer Cursors */
-.canvas-cursor {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    pointer-events: none;
-    z-index: 10;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.1s ease-out;
-}
-
-.canvas-cursor svg {
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
-    transform: rotate(-10deg);
-}
-
-.canvas-cursor .cursor-label {
-    color: #fff;
-    font-size: 0.72rem;
-    font-weight: 600;
-    padding: 3px 8px;
-    border-radius: 4px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    white-space: nowrap;
-    font-family: var(--font-body);
-}
-
-.designer-cursor {
-    opacity: 1; /* Always visible and floating */
-    top: 22%;
-    left: 76%;
-    animation: floatDesignerCursor 10s infinite ease-in-out;
-}
-
-.designer-cursor .cursor-label {
-    background: var(--accent-color);
-    transition: background-color var(--transition-speed) ease;
-}
-
-.collaborator-cursor {
-    /* Positioned dynamically by JS */
-    transform: translate(12px, 12px); /* Offset slightly from real cursor pointer */
-}
-
-.collaborator-cursor .cursor-label {
-    background: var(--accent-secondary);
-    transition: background-color var(--transition-speed) ease;
-}
-
-@keyframes floatDesignerCursor {
-    0% { transform: translate(0, 0) scale(1); }
-    30% { transform: translate(-30px, 40px) scale(0.95); }
-    60% { transform: translate(15px, -20px) scale(1.05); }
-    100% { transform: translate(0, 0) scale(1); }
-}
-
-/* Disable multiplayer cursors on mobile screens to keep layout clean */
-@media (max-width: 1024px) {
-    .canvas-cursor {
-        display: none !important;
     }
 }
