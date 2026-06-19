@@ -81,6 +81,78 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Site Mood Presets
+    const moodButtons = document.querySelectorAll('.btn-mood');
+    const moodValDisplay = document.getElementById('mood-val');
+    const codeBg = document.getElementById('code-bg');
+
+    moodButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            moodButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const bgVal = button.getAttribute('data-bg');
+            const cardVal = button.getAttribute('data-card');
+            const textVal = button.getAttribute('data-text');
+            const textSecVal = button.getAttribute('data-text-sec');
+            const nameVal = button.getAttribute('data-name');
+
+            // Apply to styles
+            root.style.setProperty('--bg-dark', bgVal);
+            root.style.setProperty('--bg-card', cardVal);
+            root.style.setProperty('--text-primary', textVal);
+            root.style.setProperty('--text-secondary', textSecVal);
+
+            // Update displays
+            moodValDisplay.textContent = nameVal;
+            codeBg.textContent = bgVal;
+        });
+    });
+
+    // Typography Vibe Presets
+    const fontButtons = document.querySelectorAll('.btn-font');
+    const fontValDisplay = document.getElementById('font-val');
+    const codeFont = document.getElementById('code-font');
+
+    fontButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            fontButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const headingFont = button.getAttribute('data-heading');
+            const bodyFont = button.getAttribute('data-body');
+            const nameVal = button.getAttribute('data-name');
+
+            // Apply to styles
+            root.style.setProperty('--font-heading', headingFont);
+            root.style.setProperty('--font-body', bodyFont);
+
+            // Update displays
+            fontValDisplay.textContent = nameVal;
+            codeFont.textContent = headingFont;
+        });
+    });
+
+    // Cyber Glitch FX Toggle
+    const toggleGlitch = document.getElementById('toggle-glitch');
+    const glitchValDisplay = document.getElementById('glitch-val');
+    const codeGlitch = document.getElementById('code-glitch');
+
+    if (toggleGlitch) {
+        toggleGlitch.addEventListener('change', (e) => {
+            const checked = e.target.checked;
+            if (checked) {
+                document.body.classList.add('glitch-fx-active');
+                glitchValDisplay.textContent = 'Active';
+                codeGlitch.textContent = 'active';
+            } else {
+                document.body.classList.remove('glitch-fx-active');
+                glitchValDisplay.textContent = 'Off';
+                codeGlitch.textContent = 'inactive';
+            }
+        });
+    }
+
     // Helper: Hex color to RGB string
     function hexToRgb(hex) {
         // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")

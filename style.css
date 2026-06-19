@@ -3,7 +3,7 @@
    Design System: Premium Slate Dark, Customizable Accent Glow, Glassmorphism, and Fluid Typography
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 :root {
     /* Color Tokens (Dynamic Variables for Vibe Coding Sandbox) */
@@ -1913,4 +1913,54 @@ footer {
 .thesitric-mini .mini-button {
     background: #f59e0b;
 }
+}
+
+/* Cyber Glitch Mode overlay and animations */
+body.glitch-fx-active {
+    position: relative;
+}
+
+body.glitch-fx-active::after {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    background-size: 100% 4px, 6px 100%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+body.glitch-fx-active h1, 
+body.glitch-fx-active h2, 
+body.glitch-fx-active .highlight {
+    animation: textGlitch 2.5s infinite steps(2);
+}
+
+@keyframes textGlitch {
+    0% {
+        text-shadow: 1px 1px 0 rgba(255, 0, 0, 0.3), -1px -1px 0 rgba(0, 255, 255, 0.3);
+    }
+    40% {
+        text-shadow: -1.5px 1px 0 rgba(255, 0, 0, 0.4), 1px -1px 0 rgba(0, 255, 255, 0.4);
+    }
+    45% {
+        text-shadow: 2px -1px 0 rgba(255, 0, 0, 0.5), -2px 1.5px 0 rgba(0, 255, 255, 0.5);
+        transform: skew(1.5deg);
+    }
+    46% {
+        text-shadow: 0 0 0 transparent;
+        transform: skew(0deg);
+    }
+    90% {
+        text-shadow: 1px -1px 0 rgba(255, 0, 0, 0.3), -1px 1px 0 rgba(0, 255, 255, 0.3);
+    }
+    95% {
+        text-shadow: -2px 1px 0 rgba(255, 0, 0, 0.5), 1.5px -2px 0 rgba(0, 255, 255, 0.5);
+        transform: skew(-1deg);
+    }
+    96% {
+        text-shadow: 0 0 0 transparent;
+        transform: skew(0deg);
+    }
 }
