@@ -64,36 +64,58 @@
                     </p>
                     <div class="hero-buttons">
                         <button class="btn-primary" onclick="document.getElementById('projects').scrollIntoView();">
-                            Explore Works <i class="fa-solid fa-arrow-right"></i>
+                            Explore Gallery <i class="fa-solid fa-compass"></i>
                         </button>
-                        <button class="btn-secondary" onclick="document.getElementById('sandbox').scrollIntoView();">
+                        <button class="btn-secondary" id="hero-web-btn">
+                            Websites Created <i class="fa-solid fa-laptop-code"></i>
+                        </button>
+                        <button class="btn-secondary" onclick="document.getElementById('sandbox').scrollIntoView();" style="flex-grow: 0;">
                             Style Customizer <i class="fa-solid fa-sliders"></i>
                         </button>
                     </div>
                 </div>
                 
-                <!-- Hero Visual Graphic (Custom CSS Wireframe mockup) -->
-                <div class="hero-visual">
-                    <div class="visual-canvas">
-                        <div class="visual-element visual-e1">
-                            <div class="visual-wireframe">
-                                <div class="wire-bar header"></div>
-                                <div class="wire-bar sub"></div>
-                                <div class="wire-bar text"></div>
-                                <div style="display: flex; gap: 6px; margin-top: 10px;">
-                                    <div class="wire-bar" style="width: 25%; background: var(--accent-secondary)"></div>
-                                    <div class="wire-bar" style="width: 40%"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="visual-element visual-e2">
-                            <span class="code-snippet-tag">&lt;div class="vibe-card"&gt;</span>
-                            <div class="wire-circle"></div>
-                            <div class="wire-bar text" style="margin-bottom: 4px;"></div>
-                            <div class="wire-bar text" style="width: 60%"></div>
-                        </div>
-                        <div class="visual-element visual-e3"></div>
+                <!-- Instagram Glassmorphism Card (Right) -->
+                <div class="instagram-profile-card spotlight-card" id="profile-card">
+                    <div class="profile-glow-ring">
+                        <img src="assets/profile.jpg" alt="Himanshu Sharma" class="profile-avatar" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'">
                     </div>
+                    <h2 class="profile-card-name">Himanshu Sharma</h2>
+                    <span class="profile-card-handle">@pix.lizer</span>
+                    
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span class="stat-val">39</span>
+                            <span class="stat-label">Posts</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-val">1.7K</span>
+                            <span class="stat-label">Followers</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-val">135</span>
+                            <span class="stat-label">Following</span>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-bio">
+                        <div class="profile-bio-line">
+                            <i class="fa-solid fa-film"></i> Visual Artist • Graphic & UI/UX
+                        </div>
+                        <div class="profile-bio-line">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Cinematic Visuals & Ads
+                        </div>
+                        <div class="profile-bio-line">
+                            <i class="fa-solid fa-palette"></i> User Centered Experiences
+                        </div>
+                        <div class="profile-bio-line">
+                            <i class="fa-solid fa-link"></i> Other: @himanshu_hexy
+                        </div>
+                    </div>
+                    
+                    <a href="https://www.instagram.com/pix.lizer/" target="_blank" rel="noopener noreferrer" class="instagram-btn" id="insta-follow-btn">
+                        <i class="fa-brands fa-instagram"></i> Follow on Instagram
+                    </a>
                 </div>
             </div>
             
@@ -285,154 +307,275 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Selected Projects Grid -->
+        </section>        <!-- Selected Projects Grid / Creative Gallery -->
         <section id="projects">
             <div class="section-header">
-                <span class="section-subtitle">Selected Work</span>
-                <h2 class="section-title">Created 10+ Real-Brand Sites & Ad Designs</h2>
+                <span class="section-subtitle">Creative Gallery</span>
+                <h2 class="section-title"><i class="fa-solid fa-shapes"></i> Selected Work & Designs</h2>
             </div>
             
-            <div class="projects-filter-bar">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="web">UI/UX & Websites</button>
-                <button class="filter-btn" data-filter="branding">Branding & Graphics</button>
+            <div class="projects-filter-bar" id="gallery-filters">
+                <button class="filter-btn active" data-filter="all" id="filter-all">All Projects</button>
+                <button class="filter-btn" data-filter="cinematic" id="filter-cinematic">Cinematic Art</button>
+                <button class="filter-btn" data-filter="uiux" id="filter-uiux">UI/UX Design</button>
+                <button class="filter-btn" data-filter="web" id="filter-web">Websites</button>
             </div>
             
-            <div class="projects-grid">
-                <!-- Project 1: Cake Crush Bakery -->
-                <div class="project-card glass-panel" data-cat="web">
-                    <div class="project-image-box">
-                        <span class="project-brand-badge">Real Brand Site</span>
-                        <div class="project-mock-visual" style="border-top: 3px solid #f43f5e;">
-                            <div class="wire-bar header" style="background:#f43f5e; width: 30%"></div>
-                            <div style="font-size:0.7rem; color: #ff758f; font-family:var(--font-heading); margin-top:5px;">🎂 Cake Crush Bakery</div>
-                            <div class="wire-bar sub" style="width: 85%"></div>
-                            <div class="wire-bar text"></div>
-                        </div>
-                    </div>
-                    <div class="project-details">
-                        <span class="project-category">UI/UX & Web Design</span>
-                        <h3 class="project-title">Cake Crush Bakery</h3>
-                        <p class="project-desc">A premium, responsive ordering website designed for a luxury cake shop. Features custom cake configurations, interactive reviews, and google maps integration.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML5/CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">UI/UX Layout</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 2: Casa Koffee Website -->
-                <div class="project-card glass-panel" data-cat="web">
-                    <div class="project-image-box">
-                        <span class="project-brand-badge">Real Brand Site</span>
-                        <div class="project-mock-visual" style="border-top: 3px solid #eab308;">
-                            <div class="wire-bar header" style="background:#eab308; width: 45%"></div>
-                            <div style="font-size:0.7rem; color: #fbbf24; font-family:var(--font-heading); margin-top:5px;">☕ Casa Koffee</div>
-                            <div class="wire-bar sub" style="width: 90%"></div>
-                            <div class="wire-bar text" style="width: 70%"></div>
-                        </div>
-                    </div>
-                    <div class="project-details">
-                        <span class="project-category">Web Design & Prototyping</span>
-                        <h3 class="project-title">Casa Koffee Website</h3>
-                        <p class="project-desc">Sleek e-menu and landing page for an artisanal coffee roaster, optimizing visual product displays and booking inquiry flows.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML5/CSS3</span>
-                            <span class="tech-tag">UX Flow</span>
-                            <span class="tech-tag">Dynamic Menu</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 3: Droopy Brand Project -->
-                <div class="project-card glass-panel" data-cat="branding">
-                    <div class="project-image-box">
-                        <span class="project-brand-badge">Ad Campaign</span>
-                        <div class="project-mock-visual" style="border-top: 3px solid #10b981;">
-                            <div class="wire-bar header" style="background:#10b981; width: 35%"></div>
-                            <div style="font-size:0.7rem; color:#34d399; font-family:var(--font-heading); margin-top:5px;">🐾 Droopy Pet Care</div>
-                            <div class="wire-bar sub"></div>
-                            <div class="wire-bar text"></div>
-                        </div>
-                    </div>
-                    <div class="project-details">
-                        <span class="project-category">Graphic Design & Branding</span>
-                        <h3 class="project-title">Droopy Brand Identity</h3>
-                        <p class="project-desc">Comprehensive brand identity system and high-conversion ad creatives designed for a premium organic pet food startup.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Photoshop</span>
-                            <span class="tech-tag">Illustrator</span>
-                            <span class="tech-tag">Ad Creatives</span>
-                        </div>
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Post 1: Cinematic Art -->
+                <div class="gallery-item glass-panel spotlight-card" data-category="cinematic">
+                    <img src="assets/post_1.webp" alt="Big Success Takes Time - Cinematic Art" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Cinematic Art</span>
+                        <h3 class="gallery-title">Big Success Takes Time</h3>
+                        <p class="gallery-desc">Cinematic typography and design campaign exploring focus, persistence, and visual composition.</p>
+                        <a href="assets/post_1.webp" target="_blank" class="gallery-link">View Fullscreen <i class="fa-solid fa-expand"></i></a>
                     </div>
                 </div>
 
-                <!-- Project 4: FitForge Coaching Platform -->
-                <div class="project-card glass-panel" data-cat="web">
-                    <div class="project-image-box">
-                        <span class="project-brand-badge">Brand Web UI</span>
-                        <div class="project-mock-visual">
-                            <div class="wire-bar header" style="width: 25%"></div>
-                            <div style="font-size:0.7rem; color:var(--accent-secondary); font-family:var(--font-heading); margin-top:5px;">💪 FitForge Coaching</div>
-                            <div class="wire-bar sub" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="project-details">
-                        <span class="project-category">UI/UX Design</span>
-                        <h3 class="project-title">FitForge Coach Portal</h3>
-                        <p class="project-desc">A fitness branding portal featuring micro-interactions and sleek dashboard layouts built for professional fitness trainers.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Figma</span>
-                            <span class="tech-tag">UI Design</span>
-                            <span class="tech-tag">Grid Layout</span>
-                        </div>
+                <!-- Post 2: UI/UX Design -->
+                <div class="gallery-item glass-panel spotlight-card" data-category="uiux">
+                    <img src="assets/post_2.webp" alt="Pintola Peanut Butter Ad - UI/UX Design" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">UI/UX Design</span>
+                        <h3 class="gallery-title">Pintola Peanut Butter Ad</h3>
+                        <p class="gallery-desc">Visual ad creative concept for Pintola featuring modern typography and product placement.</p>
+                        <a href="assets/post_2.webp" target="_blank" class="gallery-link">View Fullscreen <i class="fa-solid fa-expand"></i></a>
                     </div>
                 </div>
 
-                <!-- Project 5: Premium Product Visuals -->
-                <div class="project-card glass-panel" data-cat="branding">
-                    <div class="project-image-box">
-                        <span class="project-brand-badge">Concept Art</span>
-                        <div class="project-mock-visual" style="border-top: 3px solid #3b82f6;">
-                            <div class="wire-bar header" style="background:#3b82f6; width: 40%"></div>
-                            <div style="font-size:0.7rem; color: #60a5fa; font-family:var(--font-heading); margin-top:5px;">🧪 Premium Whey Protein</div>
-                            <div class="wire-bar sub"></div>
-                        </div>
-                    </div>
-                    <div class="project-details">
-                        <span class="project-category">Product Art & Graphic Design</span>
-                        <h3 class="project-title">Whey Protein Concept Art</h3>
-                        <p class="project-desc">High-end product packaging concepts and visual assets designed for sports nutrition marketing campaigns.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Photoshop</span>
-                            <span class="tech-tag">AI Rendering</span>
-                            <span class="tech-tag">Color Grading</span>
-                        </div>
+                <!-- Post 3: Cinematic Art -->
+                <div class="gallery-item glass-panel spotlight-card" data-category="cinematic">
+                    <img src="assets/post_3.webp" alt="Luxury Minimalist Beverage Ad - Cinematic Art" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Cinematic Art</span>
+                        <h3 class="gallery-title">Luxury Minimalist Beverage Ad</h3>
+                        <p class="gallery-desc">Premium beverage poster design featuring a high-contrast warm spotlight and serifs.</p>
+                        <a href="assets/post_3.webp" target="_blank" class="gallery-link">View Fullscreen <i class="fa-solid fa-expand"></i></a>
                     </div>
                 </div>
 
-                <!-- Project 6: 'PARADES' Fashion Editorial -->
-                <div class="project-card glass-panel" data-cat="branding">
-                    <div class="project-image-box">
-                        <span class="project-brand-badge">Editorial</span>
-                        <div class="project-mock-visual" style="border-top: 3px solid #a855f7;">
-                            <div class="wire-bar header" style="background:#a855f7; width: 60%"></div>
-                            <div style="font-size:0.7rem; color: #c084fc; font-family:var(--font-heading); margin-top:5px;">🧥 PARADES Streetwear</div>
-                            <div class="wire-bar sub"></div>
+                <!-- Post 4: UI/UX Design -->
+                <div class="gallery-item glass-panel spotlight-card" data-category="uiux">
+                    <img src="assets/post_4.webp" alt="La Pino'z Ad Redesign - UI/UX Design" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">UI/UX Design</span>
+                        <h3 class="gallery-title">La Pino'z Ad Redesign</h3>
+                        <p class="gallery-desc">Redesigned ad creatives for La Pino'z Pizza, focusing on user appeal and modern layout.</p>
+                        <a href="assets/post_4.webp" target="_blank" class="gallery-link">View Fullscreen <i class="fa-solid fa-expand"></i></a>
+                    </div>
+                </div>
+
+                <!-- Post 5: Cinematic Art -->
+                <div class="gallery-item glass-panel spotlight-card" data-category="cinematic">
+                    <img src="assets/post_5.webp" alt="Droopy Dog Food Brand - Cinematic Art" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Cinematic Art</span>
+                        <h3 class="gallery-title">Droopy Dog Food Brand</h3>
+                        <p class="gallery-desc">Branding package including logo design, packaging layout, and playful D2C campaign visuals.</p>
+                        <a href="assets/post_5.webp" target="_blank" class="gallery-link">View Fullscreen <i class="fa-solid fa-expand"></i></a>
+                    </div>
+                </div>
+
+                <!-- Post 6: UI/UX Design -->
+                <div class="gallery-item glass-panel spotlight-card" data-category="uiux">
+                    <img src="assets/post_6.jpg" alt="Boldfit Creative Layout - UI/UX Design" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">UI/UX Design</span>
+                        <h3 class="gallery-title">Boldfit Creative Layout</h3>
+                        <p class="gallery-desc">Social media graphic creative layout and visual product presentation for Boldfit.</p>
+                        <a href="assets/post_6.jpg" target="_blank" class="gallery-link">View Fullscreen <i class="fa-solid fa-expand"></i></a>
+                    </div>
+                </div>
+
+                <!-- Post 7: Cinematic Art -->
+                <div class="gallery-item glass-panel spotlight-card" data-category="cinematic">
+                    <img src="assets/post_7.webp" alt="Only What's Needed Ad - Cinematic Art" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Cinematic Art</span>
+                        <h3 class="gallery-title">Only What's Needed Ad</h3>
+                        <p class="gallery-desc">Social campaign design concept for Food Pharmer, emphasizing clean layout and honest ingredients.</p>
+                        <a href="assets/post_7.webp" target="_blank" class="gallery-link">View Fullscreen <i class="fa-solid fa-expand"></i></a>
+                    </div>
+                </div>
+
+                <!-- Post 8: UI/UX Design -->
+                <div class="gallery-item glass-panel spotlight-card" data-category="uiux">
+                    <img src="assets/post_8.webp" alt="Parates Brand Campaign - UI/UX Design" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">UI/UX Design</span>
+                        <h3 class="gallery-title">Parates Brand Campaign</h3>
+                        <p class="gallery-desc">Modern denim advertising concept focusing on perspective geometry, shadows, and composition.</p>
+                        <a href="assets/post_8.webp" target="_blank" class="gallery-link">View Fullscreen <i class="fa-solid fa-expand"></i></a>
+                    </div>
+                </div>
+
+                <!-- Post 9: Cinematic Art -->
+                <div class="gallery-item glass-panel spotlight-card" data-category="cinematic">
+                    <img src="assets/post_9.webp" alt="Premium Hoodie Ad Concept - Cinematic Art" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Cinematic Art</span>
+                        <h3 class="gallery-title">Premium Hoodie Ad Concept</h3>
+                        <p class="gallery-desc">Product presentation layout utilizing cinematic dark backgrounds and minimal branding aesthetics.</p>
+                        <a href="assets/post_9.webp" target="_blank" class="gallery-link">View Fullscreen <i class="fa-solid fa-expand"></i></a>
+                    </div>
+                </div>
+
+                <!-- Post 10: UI/UX Design -->
+                <div class="gallery-item glass-panel spotlight-card" data-category="uiux">
+                    <img src="assets/post_10.webp" alt="Power Bank Concept Ad - UI/UX Design" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">UI/UX Design</span>
+                        <h3 class="gallery-title">Power Bank Concept Ad</h3>
+                        <p class="gallery-desc">Modern electronics product showcase featuring dark-themed background lights and clean widgets.</p>
+                        <a href="assets/post_10.webp" target="_blank" class="gallery-link">View Fullscreen <i class="fa-solid fa-expand"></i></a>
+                    </div>
+                </div>
+
+                <!-- Post 11: Cinematic Art -->
+                <div class="gallery-item glass-panel spotlight-card" data-category="cinematic">
+                    <img src="assets/post_11.webp" alt="Beast Life Gym Shaker Ad - Cinematic Art" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Cinematic Art</span>
+                        <h3 class="gallery-title">Beast Life Gym Shaker Ad</h3>
+                        <p class="gallery-desc">Graphic concept campaign for Beast Life India gym shaker, utilizing dynamic lighting and high contrast.</p>
+                        <a href="assets/post_11.webp" target="_blank" class="gallery-link">View Fullscreen <i class="fa-solid fa-expand"></i></a>
+                    </div>
+                </div>
+
+                <!-- Post 12: UI/UX Design -->
+                <div class="gallery-item glass-panel spotlight-card" data-category="uiux">
+                    <img src="assets/post_12.webp" alt="Parates Premium Denim - UI/UX Design" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">UI/UX Design</span>
+                        <h3 class="gallery-title">Parates Premium Denim</h3>
+                        <p class="gallery-desc">Denim brand ad concept showing off high-fidelity textures, layout pacing, and typographic hierarchies.</p>
+                        <a href="assets/post_12.webp" target="_blank" class="gallery-link">View Fullscreen <i class="fa-solid fa-expand"></i></a>
+                    </div>
+                </div>
+
+                <!-- Website 1: Opulence Salon -->
+                <div class="gallery-item glass-panel spotlight-card" data-category="web">
+                    <div class="mini-browser-preview opulence-mini">
+                        <div class="mini-browser-header">
+                            <span class="mini-dot red"></span>
+                            <span class="mini-dot yellow"></span>
+                            <span class="mini-dot green"></span>
+                        </div>
+                        <div class="mini-browser-content">
+                            <div class="mini-hero">
+                                <span class="mini-logo">OPULENCE</span>
+                                <h4 class="mini-title">Luxury Unisex Salon</h4>
+                                <p class="mini-text">Premium Hair & Beauty Care</p>
+                                <div class="mini-button">Book Table</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="project-details">
-                        <span class="project-category">Fashion Graphics & Typography</span>
-                        <h3 class="project-title">'PARADES' Campaign</h3>
-                        <p class="project-desc">Modern editorial layouts and typographical print/digital advertising mockups designed for an urban fashion brand.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">InDesign</span>
-                            <span class="tech-tag">Illustrator</span>
-                            <span class="tech-tag">Typography</span>
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Web Development</span>
+                        <h3 class="gallery-title">Opulence Salon</h3>
+                        <p class="gallery-desc">Premium salon branding and booking website built for Opulence Luxury Unisex Salon, Gurgaon.</p>
+                        <a href="https://hexypto.github.io/opulence-salon/" target="_blank" rel="noopener noreferrer" class="gallery-link">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Website 2: Verve Cafe -->
+                <div class="gallery-item glass-panel spotlight-card" data-category="web">
+                    <div class="mini-browser-preview verve-mini">
+                        <div class="mini-browser-header">
+                            <span class="mini-dot red"></span>
+                            <span class="mini-dot yellow"></span>
+                            <span class="mini-dot green"></span>
                         </div>
+                        <div class="mini-browser-content">
+                            <div class="mini-hero">
+                                <span class="mini-logo"><i class="fa-solid fa-mug-hot"></i> Verve Cafe</span>
+                                <h4 class="mini-title">Warm Coffee.</h4>
+                                <p class="mini-text">Premium Bites & Vibe</p>
+                                <div class="mini-button">Order Online</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Web Development</span>
+                        <h3 class="gallery-title">Verve Cafe</h3>
+                        <p class="gallery-desc">Cozy coffee shop e-storefront built for Verve Cafe in Satya The Hive Mall, Gurgaon.</p>
+                        <a href="https://hexypto.github.io/Verve-Cafe/" target="_blank" rel="noopener noreferrer" class="gallery-link">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Website 3: Lensfree.co -->
+                <div class="gallery-item glass-panel spotlight-card" data-category="web">
+                    <div class="mini-browser-preview lensfree-mini">
+                        <div class="mini-browser-header">
+                            <span class="mini-dot red"></span>
+                            <span class="mini-dot yellow"></span>
+                            <span class="mini-dot green"></span>
+                        </div>
+                        <div class="mini-browser-content">
+                            <div class="mini-hero">
+                                <span class="mini-logo">LENSFREE</span>
+                                <h4 class="mini-title">Sculpted Elegance</h4>
+                                <p class="mini-text">Handcrafted Eyewear Store</p>
+                                <div class="mini-button">Explore Shop</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Web Development</span>
+                        <h3 class="gallery-title">Lensfree.co Eyewear</h3>
+                        <p class="gallery-desc">Premium designer eyewear & luxury sunglasses e-commerce store with consultation scheduler.</p>
+                        <a href="https://hexypto.github.io/Lensfree.co/" target="_blank" rel="noopener noreferrer" class="gallery-link">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Website 4: CASA KOFFEE -->
+                <div class="gallery-item glass-panel spotlight-card" data-category="web">
+                    <div class="mini-browser-preview casakoffee-mini">
+                        <div class="mini-browser-header">
+                            <span class="mini-dot red"></span>
+                            <span class="mini-dot yellow"></span>
+                            <span class="mini-dot green"></span>
+                        </div>
+                        <div class="mini-browser-content">
+                            <div class="mini-hero">
+                                <span class="mini-logo"><i class="fa-solid fa-leaf"></i> Casa Koffee</span>
+                                <h4 class="mini-title">Nature In A Cup</h4>
+                                <p class="mini-text">Sustainable & Organic Roasts</p>
+                                <div class="mini-button">Book Table</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Web Development</span>
+                        <h3 class="gallery-title">CASA KOFFEE</h3>
+                        <p class="gallery-desc">Direct-trade sustainable café experience site presenting organic slow-matured roasts.</p>
+                        <a href="https://hexypto.github.io/CASA-KOFFEE-Demo/" target="_blank" rel="noopener noreferrer" class="gallery-link">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Website 5: The Sitric -->
+                <div class="gallery-item glass-panel spotlight-card" data-category="web">
+                    <div class="mini-browser-preview thesitric-mini">
+                        <div class="mini-browser-header">
+                            <span class="mini-dot red"></span>
+                            <span class="mini-dot yellow"></span>
+                            <span class="mini-dot green"></span>
+                        </div>
+                        <div class="mini-browser-content">
+                            <div class="mini-hero">
+                                <span class="mini-logo">THE SITRIC</span>
+                                <h4 class="mini-title">Baked With Love</h4>
+                                <p class="mini-text">Minimalist Bakery & Cafe</p>
+                                <div class="mini-button">Explore Menu</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-tag">Web Development</span>
+                        <h3 class="gallery-title">The Sitric Bakery</h3>
+                        <p class="gallery-desc">Minimalist, premium bakery showcase featuring hot espresso brews and signature bakes.</p>
+                        <a href="https://hexypto.github.io/The-Sitric/" target="_blank" rel="noopener noreferrer" class="gallery-link">Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
             </div>

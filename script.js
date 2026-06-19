@@ -94,30 +94,74 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- 2. PROJECTS GRID FILTERING ---
+    // --- 2. GALLERY SPOTLIGHT & GRID FILTERING ---
+    const spotlightCards = document.querySelectorAll('.spotlight-card');
+    
+    // Mouse Spotlight Effect
+    spotlightCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+
+    // Gallery Filter Tabs
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
+    const galleryItems = document.querySelectorAll('.gallery-item');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Active button class
+            // Active state toggle
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
             const filterValue = button.getAttribute('data-filter');
 
-            projectCards.forEach(card => {
-                const category = card.getAttribute('data-cat');
-                if (filterValue === 'all' || category === filterValue) {
-                    card.classList.remove('hidden');
-                    // Add subtle entrance animation
-                    card.style.animation = 'fadeIn 0.4s ease forwards';
-                } else {
-                    card.classList.add('hidden');
-                }
+            galleryItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                
+                // Fade out transition
+                item.style.opacity = '0';
+                item.style.transform = 'scale(0.95)';
+                item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+
+                setTimeout(() => {
+                    if (filterValue === 'all' || category === filterValue) {
+                        item.classList.remove('hide');
+                        // Trigger browser reflow
+                        void item.offsetWidth;
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    } else {
+                        item.classList.add('hide');
+                    }
+                }, 300);
             });
         });
     });
+
+    // Hero Websites CTA Button Router
+    const heroWebBtn = document.getElementById('hero-web-btn');
+    if (heroWebBtn) {
+        heroWebBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const projectsSec = document.getElementById('projects');
+            if (projectsSec) {
+                projectsSec.scrollIntoView({ behavior: 'smooth' });
+            }
+            const webFilterTab = document.getElementById('filter-web');
+            if (webFilterTab) {
+                // Delayed click to align with scroll finish
+                setTimeout(() => {
+                    webFilterTab.click();
+                }, 300);
+            }
+        });
+    }
 
 
     // --- 3. COPY EMAIL TO CLIPBOARD ---
