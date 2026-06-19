@@ -1373,6 +1373,17 @@ footer {
 
 /* Responsive Rules */
 @media (max-width: 1024px) {
+    #hero {
+        height: auto !important;
+        min-height: unset !important;
+        padding-top: 120px !important;
+        padding-bottom: 60px !important;
+    }
+    
+    .scroll-indicator {
+        display: none !important;
+    }
+    
     .hero-wrapper {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -1473,6 +1484,7 @@ footer {
     
     .hero-title {
         font-size: 2.8rem;
+        line-height: 1.25 !important;
     }
     
     .profile-wrapper {
@@ -1495,6 +1507,7 @@ footer {
 @media (max-width: 576px) {
     .hero-title {
         font-size: 2.2rem;
+        line-height: 1.25 !important;
     }
     
     .hero-desc {
