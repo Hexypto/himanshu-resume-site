@@ -1379,7 +1379,7 @@ footer {
         text-align: center;
     }
     
-    .hero-badge, .hero-buttons {
+    .hero-badge, .hero-buttons, .hero-tags {
         justify-content: center;
         margin-left: auto;
         margin-right: auto;
@@ -1405,6 +1405,17 @@ footer {
 }
 
 @media (max-width: 768px) {
+    section {
+        padding: 60px 0 40px !important;
+    }
+    
+    .glow-blob {
+        animation: none !important;
+        width: 250px !important;
+        height: 250px !important;
+        filter: blur(80px) !important;
+    }
+
     header {
         top: 10px;
         width: 95%;
@@ -1516,6 +1527,78 @@ footer {
     
     .profile-avatar-container {
         max-width: 260px;
+    }
+    
+    .instagram-profile-card {
+        padding: 20px 16px !important;
+    }
+    
+    .profile-glow-ring {
+        width: 90px !important;
+        height: 90px !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .profile-card-name {
+        font-size: 1.3rem !important;
+    }
+    
+    .profile-stats {
+        margin: 15px 0 !important;
+        padding: 10px 0 !important;
+    }
+    
+    .profile-bio {
+        padding: 12px !important;
+        font-size: 0.82rem !important;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+    
+    .skills-category {
+        padding: 20px 16px !important;
+    }
+    
+    .timeline-container {
+        padding-left: 20px !important;
+    }
+    
+    .timeline-item::before {
+        left: -20px !important;
+        width: 14px !important;
+        height: 14px !important;
+        top: 8px !important;
+    }
+    
+    .timeline-panel {
+        padding: 16px !important;
+    }
+    
+    .education-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .education-card {
+        padding: 16px !important;
+        gap: 12px !important;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .contact-form {
+        padding: 20px 16px !important;
+    }
+    
+    .sandbox-controls {
+        padding: 20px 16px !important;
+    }
+    
+    .sandbox-code-body {
+        padding: 16px !important;
+        font-size: 0.78rem !important;
     }
 }
 
