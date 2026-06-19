@@ -215,4 +215,24 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
+    // --- 5. MOBILE HAMBURGER MENU TOGGLE ---
+    const menuToggle = document.getElementById('menu-toggle-btn');
+    const navLinksList = document.querySelector('.nav-links');
+
+    if (menuToggle && navLinksList) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinksList.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        const links = navLinksList.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinksList.classList.remove('active');
+            });
+        });
+    }
+
 });
