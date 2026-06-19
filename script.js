@@ -307,4 +307,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- 6. FIGMA COLLABORATOR CURSOR TRACKING ---
+    const heroSec = document.getElementById('hero');
+    const collabCursor = document.querySelector('.collaborator-cursor');
+
+    if (heroSec && collabCursor) {
+        heroSec.addEventListener('mousemove', (e) => {
+            const rect = heroSec.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            collabCursor.style.left = `${x}px`;
+            collabCursor.style.top = `${y}px`;
+            collabCursor.style.opacity = '1';
+        });
+
+        heroSec.addEventListener('mouseleave', () => {
+            collabCursor.style.opacity = '0';
+        });
+    }
+
 });
